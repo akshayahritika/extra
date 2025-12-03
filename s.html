@@ -49,6 +49,11 @@ html,body{height:100%;margin:0;background:linear-gradient(180deg,#0b0b0d 0%,#0f1
 .hw-item.graded{padding-left:12px;border-left-color:var(--success)}
 .hw-item.rejected{border-left-color:var(--danger)}
 .role-indicator{background:var(--light-purple);color:#000;padding:6px 12px;border-radius:20px;font-size:14px;font-weight:600;display:inline-block}
+.role-toggle{display:flex;gap:12px;margin:20px 0;background:rgba(255,255,255,0.05);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.1)}
+.role-toggle button{flex:1;padding:12px;border-radius:10px;font-weight:700;cursor:pointer;border:none;transition:all 0.3s}
+.role-toggle button.student-role{background:var(--success);color:#000}
+.role-toggle button.teacher-role{background:var(--light-purple);color:#000}
+.role-toggle button:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(132,210,255,0.3)}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:26px;padding:10px 18px;border-radius:999px;font-weight:700;z-index:1000}
 .toast.success{background:var(--success);color:#000}
 .toast.error{background:var(--danger);color:#fff}
@@ -85,6 +90,12 @@ html,body{height:100%;margin:0;background:linear-gradient(180deg,#0b0b0d 0%,#0f1
 <div id="welcomeUser">Student</div>
 </div>
 </div>
+
+<div class="role-toggle">
+<button class="student-role" onclick="switchRole('Student')">👨‍🎓 Student</button>
+<button class="teacher-role" onclick="switchRole('Teacher')">👩‍🏫 Teacher</button>
+</div>
+
 <h3 style="color:var(--light-blue);margin:8px 0 20px 0">Quick Subjects (23 Topics)</h3>
 <div class="subject-grid" id="subjectsQuick"></div>
 </section>
